@@ -1,0 +1,8 @@
+<template name = "meetups">
+    {{#each regions}}
+        <h2>{{this}}</h2>
+        {{#each meetups this}}
+            <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
+        {{/each}}
+    {{/each}}
+</template>
