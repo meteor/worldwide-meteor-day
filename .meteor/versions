@@ -1,3 +1,5 @@
+accounts-base@1.1.1
+accounts-password@1.0.2
 application-configuration@1.0.2
 autopublish@1.0.0
 autoupdate@1.1.1
@@ -13,6 +15,7 @@ ctl@1.0.1
 ddp@1.0.9
 deps@1.0.4
 ejson@1.0.3
+email@1.0.3
 fastclick@1.0.0
 follower-livedata@1.0.1
 geojson-utils@1.0.0
@@ -24,6 +27,7 @@ insecure@1.0.0
 jquery@1.0.0
 json@1.0.0
 livedata@1.0.10
+localstorage@1.0.0
 logging@1.0.3
 meteor-platform@1.1.1
 meteor@1.1.1
@@ -31,6 +35,7 @@ minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
 mongo@1.0.6
+npm-bcrypt@0.7.7
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 random@1.0.0
@@ -39,9 +44,12 @@ reactive-var@1.0.2
 reload@1.1.0
 retry@1.0.0
 routepolicy@1.0.1
+service-configuration@1.0.1
 session@1.0.2
+sha@1.0.0
 spacebars-compiler@1.0.2
 spacebars@1.0.2
+srp@1.0.0
 templating@1.0.7
 tracker@1.0.2
 ui@1.0.3
