@@ -369,7 +369,10 @@ Meteor.startup(function() {
     
     if (Meetups.find({}).count() === 0) {
       _.each(seedDataJson, function(meetup) {
-          Meetups.insert(meetup);
+          if ( !Meetups.findOne({meetupId:meetup.meetupId}) ) {
+              Meetups.insert(meetup);
+          }
+          
       })
     }
 

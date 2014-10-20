@@ -1,7 +1,6 @@
 accounts-base@1.1.1
 accounts-password@1.0.2
 application-configuration@1.0.2
-autopublish@1.0.0
 autoupdate@1.1.1
 base64@1.0.0
 binary-heap@1.0.0
@@ -31,11 +30,14 @@ localstorage@1.0.0
 logging@1.0.3
 meteor-platform@1.1.1
 meteor@1.1.1
+meteorhacks:async@1.0.0
+meteorhacks:npm@1.2.0
 minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
 mongo@1.0.6
 npm-bcrypt@0.7.7
+npm-container@1.0.0
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 random@1.0.0

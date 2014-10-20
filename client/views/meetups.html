@@ -2,7 +2,12 @@
     {{#each regions}}
         <h2>{{this}}</h2>
         {{#each meetups this}}
-            <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
+            <h3><a target="_blank" href="{{url}}">{{city}}</a><br/>
+            {{#each attendees}}
+                <a href="{{profile_url}}" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
+            {{/each}}
+            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} going. {{/if}}</small>
+            </h3>
         {{/each}}
     {{/each}}
 </template>
