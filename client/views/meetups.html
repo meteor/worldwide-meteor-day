@@ -6,7 +6,7 @@
             {{#each attendees}}
                 <a href="{{profile_url}}" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
             {{/each}}
-            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} going. {{/if}}</small>
+            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} {{remaining}} going. {{/if}}</small>
             </h3>
         {{/each}}
     {{/each}}

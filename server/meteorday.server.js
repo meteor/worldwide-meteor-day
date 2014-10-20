@@ -62,7 +62,7 @@ Meteor.methods({
                 if (!err) {
 
                     var attendees = [];
-                    var attendeesCount = response.meta.count;
+                    var attendeesCount = 0;
                     var totalGuestsCount = 0;
                     var addattendeeToMeetup = false;
                     for (var i = 0, l = attendeesCount; i < l; i++) {
@@ -74,7 +74,7 @@ Meteor.methods({
                         //console.log("meetup: " + meetup.groupName, "member: ", node.name);
                         attendee.memberName = node.member.name;
                         attendee.memberId = node.member.member_id;
-                        attendee.profile_url = "http://www.meetup.com/" + meetup.groupName + "/members" + attendee.memberId;   //unfortunately getRSVPs does not return profile url;
+                        attendee.profile_url = "http://www.meetup.com/" + meetup.groupName + "/members/" + attendee.memberId;   //unfortunately getRSVPs does not return profile url;
                         if (node.hasOwnProperty("member_photo") && node.member_photo.photo_link != "") {
                             
                             attendee.thumbnailUrl = node.member_photo.photo_link;
@@ -88,6 +88,8 @@ Meteor.methods({
                         //exclude folks who rsvpd no.
                         if ( node.response === "no") {
                             addattendeeToMeetup = false;
+                        } else {
+                            attendeesCount++;
                         }
                         if (node.host) {
                             attendee.host = node.host;
