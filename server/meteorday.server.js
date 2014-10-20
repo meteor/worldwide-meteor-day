@@ -132,6 +132,14 @@ Meteor.methods({
     }
 });
 
+//Cron job
+
+var fetchAttendees = new Cron(function() {
+  Meteor.call("fetchRSVPs") ;
+} , {
+  minute: 30
+});
+
 
 // Publications
 Meteor.publish("meetups", function() {

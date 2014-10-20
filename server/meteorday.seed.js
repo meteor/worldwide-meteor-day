@@ -375,5 +375,9 @@ Meteor.startup(function() {
           
       })
     }
+    
+    //Pull attendees on restart
+    
+    Meteor.call("fetchRSVPs");
 
 });
