@@ -383,7 +383,7 @@ Meteor.startup(function() {
 
     // Populate meetup seed data
 
-    if (Meetups.find({}).count() === 0) {
+    if (Meetups.find({}).count() < seedDataJson.length) {
         _.each(seedDataJson, function(meetup) {
             if (!Meetups.findOne({
                 meetupId: meetup.meetupId

@@ -65,7 +65,7 @@ Meteor.methods({
                     var attendeesCount = 0;
                     var totalGuestsCount = 0;
                     var addattendeeToMeetup = false;
-                    for (var i = 0, l = attendeesCount; i < l; i++) {
+                    for (var i = 0, l = response.meta.count; i < l; i++) {
                         var node = response.results[i];
                         var attendee = {};
                         if(node.hasOwnProperty("guests")) {
