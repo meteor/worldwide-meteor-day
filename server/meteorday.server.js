@@ -65,6 +65,7 @@ Meteor.methods({
                     var attendeesCount = 0;
                     var totalGuestsCount = 0;
                     var addattendeeToMeetup = false;
+                    var hosts = [];
                     for (var i = 0, l = response.meta.count; i < l; i++) {
                         var node = response.results[i];
                         var attendee = {};
@@ -93,6 +94,7 @@ Meteor.methods({
                         }
                         if (node.host) {
                             attendee.host = node.host;
+                            hosts.push(attendee);
                         }
                         else {
                             attendee.host = false;
@@ -111,7 +113,8 @@ Meteor.methods({
                             attendees: attendees,
                             attendeesCount: attendeesCount,
                             attendeesWithPhotosCount: attendees.length,
-                            totalGuestsCount: totalGuestsCount
+                            totalGuestsCount: totalGuestsCount,
+                            hosts: hosts
                         }
                     });
                     

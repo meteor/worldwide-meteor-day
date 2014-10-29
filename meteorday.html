@@ -115,7 +115,11 @@
 
     <!-- Attend Section -->
     <section id="attend" class="content-section text-center">
-        <div>{{> meetups}}</div>
+      <div class="row">
+        <div class="col-md-4 col-sm-12">{{> meetups regions="North America"}}</div>
+        <div class="col-md-4 col-sm-12">{{> meetups regions="Europe"}}</div>
+        <div class="col-md-4 col-sm-12">{{> meetups regions="Africa,Australia,Asia,South America"}}</div>
+      </div>
     </section>
 
 

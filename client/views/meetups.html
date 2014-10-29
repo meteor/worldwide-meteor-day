@@ -1,13 +1,45 @@
-<template name = "meetups">
-    {{#each regions}}
+<template name = "meetups_old">
+    {{#each selectRegions regions}}
         <h2>{{this}}</h2>
         {{#each meetups this}}
             <h3><a target="_blank" href="{{url}}">{{city}}</a><br/>
             {{#each attendees}}
-                <a href="{{profile_url}}" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
+                <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
             {{/each}}
-            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} {{remaining}} going. {{/if}}</small>
+            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} {{remaining this}} going. {{/if}}</small>
             </h3>
+        {{/each}}
+    {{/each}}
+</template>
+
+<template name="meetups">
+    {{#each selectRegions regions}}
+        <h2>{{this}}</h2>
+        {{#each meetups this}}
+            <div class="panel meetups">
+              <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
+              <!-- show addtional data only if available -->
+              {{#if attendees}}
+                  <div class="panel-body">
+                    {{#if hosts }}
+                        <div class="hosts">
+                            <h6>Hosts</h6>
+                            {{#each hosts}}
+                                <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                    <div class="attendees">
+                        <h6>Attendees</h6>
+                        {{#each attendees}}
+                            <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
+                        {{/each}}
+                    </div>
+                    <br/>
+                    <a target="_blank" href="{{url}}">{{#if remaining this }} and {{remaining this}} more going. {{/if}}</a>
+                  </div>
+              {{/if}}
+            </div>
         {{/each}}
     {{/each}}
 </template>
