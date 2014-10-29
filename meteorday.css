@@ -1,1 +1,23 @@
 /* CSS declarations go here */
+.meetups {
+    background-color: rgba(33, 154, 179, 0.21)!important;
+    padding:10px 0px 10px 0px;
+}
+
+.meetups h3 {
+    margin-bottom : 10px;
+}
+
+.meetups .hosts h6 {
+    margin: 0 0 5px 0;
+    font-weight: normal;
+}
+
+.meetups .attendees h6 {
+    margin: 15px 0 5px 0;
+    font-weight:normal;
+}
+
+.meetups .panel-body {
+    padding: 5px;
+}
