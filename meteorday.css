@@ -10,10 +10,12 @@
 
 .meetups .hosts h6 {
     margin: 0 0 5px 0;
+    font-weight: normal;
 }
 
 .meetups .attendees h6 {
-    margin: 10px 0 5px 0;
+    margin: 15px 0 5px 0;
+    font-weight:normal;
 }
 
 .meetups .panel-body {
