@@ -35,6 +35,13 @@ Template.meetups.helpers({
     },
     'cityTextIsLong' : function(meetup) {
         return ((meetup.city).length > 24 ) ? true : false;
+    },
+    'photoUrl' : function(imgUrl) {
+        if(!imgUrl) {
+            return "/img/no_photo.jpeg";
+        } else {
+            return imgUrl;
+        }
     }
     
 })
