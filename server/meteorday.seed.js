@@ -377,6 +377,10 @@ var seedDataJson = [
             {
                 "url": "http://www.meetup.com/Meteor-Sydney/events/212510832/",
                 "city": "Sydney, Australia"
+            },
+            {
+                "url": "http://www.meetup.com/Meteor-Newcastle/events/216455972/",
+                "city": "Newcastle, Australia"
             }
         ]
     },
