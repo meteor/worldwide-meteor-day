@@ -1,6 +1,6 @@
 var list = ["getCategories", "getCheckins", "postCheckin", "getCities", "getOpenEvents", "getConcierge", "getEvents", "postEvent", "getEventComments", "postEventComment", "postEventCommentFlag", "getEventCommentLikes", "getEventRatings", "postEventRating", "getEventAttendance", "takeEventAttendance", "getEverywhereComments", "postEverywhereComment", "getEverywhereCommunities", "postEverywhereCommunity", "getEverywhereFollows", "getEverywhereFollowers", "postEverywhereFollow", "postEverywhereContainer", "getEverywhereContainers", "postEverywhereSeed", "postEverywhereEvent", "getEverywhereEvents", "postEverywhereRsvp", "getEverywhereRsvps", "getEverywhereSeeds", "getActivity", "getGroups", "getComments", "getMembers", "postMemberPhoto", "postMessage", "getOEMBed", "getOEMBed", "getPhotoComments", "postPhotoComment", "getPhotoAlbums", "getPhoto", "getPhotos", "postPhotoAlbum", "postPhoto", "getProfiles", "postProfiles", "postRSVP", "getRSVPs", "getOpenVenues", "getVenues", "getTopics"],
     MeetupMe = Meteor.npmRequire("meetup-api");
-var api_key = "42457231326c5e22455214385933536"; //Meteor.settings[Meteor.settings.environment].meetup.api_key;
+var api_key = Meteor.settings.meetup_api_key;
 var meetup = new MeetupMe(api_key);
 var AsyncMeetup = Async.wrap(meetup, list);
 
@@ -51,12 +51,10 @@ Meteor.methods({
         var meetups = Meetups.find().fetch();
         var count = Meetups.find().count();
         var x = 0;
-
-        console.log("Meetups to process: ", count);
-
+        
+        console.log( "Initiating Meetup Events Processing..");
         function f() {
             var meetup = meetups[x];
-            console.log("Processing meetup group (throttled): ", x, meetups[x].groupName);
 
             Meteor.call('MeetupAPI', 'getRSVPs', { "event_id": meetup.meetupId, "fields" : "host"}, function(err, response) {
                 if (!err) {
@@ -132,6 +130,7 @@ Meteor.methods({
             }
         }
         f();
+        console.log(" Finished processing Meetup Events");
     }
 });
 
@@ -149,7 +148,7 @@ Meteor.publish("meetups", function() {
     return Meetups.find({}, {
         fields: {
             attendees: {
-                $slice: 5
+                $slice: 4
             }
         }
     });

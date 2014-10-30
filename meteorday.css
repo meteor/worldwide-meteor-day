@@ -7,17 +7,26 @@
 .meetups h3 {
     margin-bottom : 10px;
 }
+.meetups h4 {
+    margin-bottom : 10px;
+}
 
 .meetups .hosts h6 {
     margin: 0 0 5px 0;
     font-weight: normal;
+    color: rgb(100,100,100);
 }
 
 .meetups .attendees h6 {
-    margin: 15px 0 5px 0;
+    margin: 0 0 5px 0;
     font-weight:normal;
+    color: rgb(100,100,100);
 }
 
 .meetups .panel-body {
     padding: 5px;
+}
+
+.meetups .img-circle {
+    margin:1px;
 }
