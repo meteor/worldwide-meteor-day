@@ -14,7 +14,7 @@
                     {{else}}
                         <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
                     {{/if}}
-                
+
                     <!-- show addtional data only if available -->
                     {{#if attendees}}
                       <div class="panel-body">
@@ -37,7 +37,7 @@
                                     {{#each attendees}}
                                         <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
                                     {{/each}}
-                                    <a target="_blank" href="{{url}}">{{#if remaining this }} + {{remaining this}} {{/if}}</a>
+                                    <a target="_blank" href="{{url}}" class="overflow-attendees">{{#if remaining this }} + {{remaining this}} {{/if}}</a>
                                 </div>
                             </div>
                       </div>

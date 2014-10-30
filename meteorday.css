@@ -30,3 +30,17 @@
 .meetups .img-circle {
     margin:1px;
 }
+
+.overflow-attendees {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #2199B2;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 100%;
+  vertical-align: top;
+  font-size: 10px;
+}
