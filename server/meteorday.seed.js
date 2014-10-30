@@ -160,6 +160,10 @@ var seedDataJson = [
         "region" : "Europe",
         "meetups" : [
             {
+                "url": "http://www.meetup.com/Meteor-Aalborg/events/216529522/",
+                "city": "Aalborg, Denmark"
+            },
+            {
                 "url": "http://www.meetup.com/Meteor-Amsterdam/events/212182012/",
                 "city": "Amsterdam, The Netherlands"
             },
