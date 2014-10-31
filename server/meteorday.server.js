@@ -14,7 +14,9 @@ Meteor.methods({
             case "getRSVPs":
                 return AsyncMeetup.getRSVPs(param);
                 break
-
+            case "getLeaders" :
+                return AsyncMeetup.getProfiles(param);
+                break
             default:
 
         }
@@ -90,13 +92,7 @@ Meteor.methods({
                         } else {
                             attendeesCount++;
                         }
-                        if (node.host) {
-                            attendee.host = node.host;
-                            hosts.push(attendee);
-                        }
-                        else {
-                            attendee.host = false;
-                        }
+                        
                         if(addattendeeToMeetup) {
                             //console.log("Adding attendee - ", attendee.memberName);
                             attendees.push(attendee);
@@ -104,19 +100,42 @@ Meteor.methods({
                     }
                     //console.log("Updating attendees for: ", meetup.groupName);
                     
-                    Meetups.update({
-                        _id: meetup._id
-                    }, {
-                        $set: {
-                            attendees: attendees,
-                            attendeesCount: attendeesCount,
-                            attendeesWithPhotosCount: attendees.length,
-                            totalGuestsCount: totalGuestsCount,
-                            hosts: hosts
+                    // Lets find the leadership team for this group
+                    
+                    Meteor.call("MeetupAPI" , "getLeaders" , {"group_urlname": meetup.groupName, "role":"leads"} , function (err , response) {
+                        if (!err) {
+                            var leaders = response.results;
+                            for ( i = 0 ; i < response.meta.count ; i++ ) {
+                                
+                                var hostId = leaders[i].member_id;
+                                //Only consider those leaders who have RSVPd.
+                                if ( _.findWhere( attendees , {'memberId' : hostId}) ) {
+                                    leader = {};
+                                    if(leaders[i].hasOwnProperty("photo") && leaders[i].photo.photo_link !== "") {
+                    					leader.thumbnailUrl = leaders[i].photo.photo_link;
+                    				} 
+                                    leader.memberId = leaders[i].member_id;
+                                    leader.memberName = leaders[i].name;
+                                    leader.profile_url = leaders[i].profile_url;
+                                    leader.role= leaders[i].role;
+                                    leader.host = true;
+                                    hosts.push(leader);
+                                }
+                            }
+                            Meetups.update({
+                                _id: meetup._id
+                            }, {
+                                $set: {
+                                    attendees: attendees,
+                                    attendeesCount: attendeesCount,
+                                    attendeesWithPhotosCount: attendees.length,
+                                    totalGuestsCount: totalGuestsCount,
+                                    hosts: hosts
+                                }
+                            });
+                            
                         }
                     });
-                    
-
                 }
                 else {
                     //console.log("Error running getRSVPs meetup api: ", err.code, err.details);
@@ -127,10 +146,11 @@ Meteor.methods({
             x++;
             if (x < count) {
                 Meteor.setTimeout(f, 3000);
+            } else {
+                console.log(" Finished processing Meetup Events");
             }
         }
         f();
-        console.log(" Finished processing Meetup Events");
     }
 });
 
