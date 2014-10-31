@@ -2,12 +2,21 @@
 
 Meteor.subscribe("meetups");
 
+Template.meetups.rendered = function() {
+    Session.set('cityquery',"");
+}
+
 Template.meetups.helpers({
     'selectRegions' : function(regions) {
         return _.map(regions.split(","), function(region){return region.trim()});
     },
     'meetups' : function(region) {
-        return Meetups.find({region:region}, {sort: {city: 1}});
+        var searchCity = Session.get('cityquery');
+        if (searchCity) {
+            return Meetups.find({city:{$regex:searchCity, $options:'i'} , region:region}, {sort: {city: 1}});
+        } else {
+            return Meetups.find({region:region}, {sort: {city: 1}});
+        }
     },
     'remaining' : function(meetup) {
         if (meetup.attendeesWithPhotosCount > 4 ) {
@@ -45,4 +54,3 @@ Template.meetups.helpers({
     }
     
 })
-
