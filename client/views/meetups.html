@@ -1,45 +1,51 @@
-<template name = "meetups_old">
-    {{#each selectRegions regions}}
-        <h2>{{this}}</h2>
-        {{#each meetups this}}
-            <h3><a target="_blank" href="{{url}}">{{city}}</a><br/>
-            {{#each attendees}}
-                <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
-            {{/each}}
-            <small>{{#if remaining this }} and {{remaining this}} more going. {{else}} {{remaining this}} going. {{/if}}</small>
-            </h3>
-        {{/each}}
-    {{/each}}
-</template>
-
 <template name="meetups">
     {{#each selectRegions regions}}
-        <h2>{{this}}</h2>
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{this}}</h2>
+            </div>
+        </div>
+        <div class="row row-centered">
         {{#each meetups this}}
-            <div class="panel meetups">
-              <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
-              <!-- show addtional data only if available -->
-              {{#if attendees}}
-                  <div class="panel-body">
-                    {{#if hosts }}
-                        <div class="hosts">
-                            <h6>Hosts</h6>
-                            {{#each hosts}}
-                                <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
-                            {{/each}}
-                        </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 col-centered">
+                <div class="panel meetups">
+                    {{#if cityTextIsLong this}}
+                        <h4><a target="_blank" href="{{url}}">{{city}}</a></h4>
+                    {{else}}
+                        <h3><a target="_blank" href="{{url}}">{{city}}</a></h3>
                     {{/if}}
-                    <div class="attendees">
-                        <h6>Attendees</h6>
-                        {{#each attendees}}
-                            <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
-                        {{/each}}
-                    </div>
-                    <br/>
-                    <a target="_blank" href="{{url}}">{{#if remaining this }} and {{remaining this}} more going. {{/if}}</a>
-                  </div>
-              {{/if}}
+
+                    <!-- show addtional data only if available -->
+                    {{#if attendees}}
+                      <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-4 hosts">
+                                    <h6>Hosts</h6>
+                                </div>
+                                <div class="col-xs-8 attendees">
+                                    <h6>Attendees</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    {{#each hostsTruncated this}}
+                                        <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{photoUrl thumbnailUrl}}"></a>
+                                    {{/each}}
+                                    {{#if hostsRemaining this }} <a target="_blank" href="{{url}}" class="overflow-attendees">+ {{hostsRemaining this}} </a>{{/if}}
+                                </div>
+                                <div class="col-xs-8">
+                                    {{#each attendees}}
+                                        <a href="{{profile_url}}" target="_blank" title="{{ memberName }}" data-toggle="tooltip"><img class="img-circle" width=30 height=30 src="{{thumbnailUrl}}"></a>
+                                    {{/each}}
+                                    {{#if remaining this }}<a target="_blank" href="{{url}}" class="overflow-attendees">+ {{remaining this}}</a> {{/if}}
+                                </div>
+                            </div>
+                      </div>
+                    {{/if}}
+                </div>
             </div>
         {{/each}}
+        </div>
+        <br/>
     {{/each}}
 </template>

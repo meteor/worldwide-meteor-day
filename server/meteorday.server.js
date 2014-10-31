@@ -1,6 +1,6 @@
 var list = ["getCategories", "getCheckins", "postCheckin", "getCities", "getOpenEvents", "getConcierge", "getEvents", "postEvent", "getEventComments", "postEventComment", "postEventCommentFlag", "getEventCommentLikes", "getEventRatings", "postEventRating", "getEventAttendance", "takeEventAttendance", "getEverywhereComments", "postEverywhereComment", "getEverywhereCommunities", "postEverywhereCommunity", "getEverywhereFollows", "getEverywhereFollowers", "postEverywhereFollow", "postEverywhereContainer", "getEverywhereContainers", "postEverywhereSeed", "postEverywhereEvent", "getEverywhereEvents", "postEverywhereRsvp", "getEverywhereRsvps", "getEverywhereSeeds", "getActivity", "getGroups", "getComments", "getMembers", "postMemberPhoto", "postMessage", "getOEMBed", "getOEMBed", "getPhotoComments", "postPhotoComment", "getPhotoAlbums", "getPhoto", "getPhotos", "postPhotoAlbum", "postPhoto", "getProfiles", "postProfiles", "postRSVP", "getRSVPs", "getOpenVenues", "getVenues", "getTopics"],
     MeetupMe = Meteor.npmRequire("meetup-api");
-var api_key = "42457231326c5e22455214385933536"; //Meteor.settings[Meteor.settings.environment].meetup.api_key;
+var api_key = Meteor.settings.meetup_api_key;
 var meetup = new MeetupMe(api_key);
 var AsyncMeetup = Async.wrap(meetup, list);
 
@@ -14,7 +14,9 @@ Meteor.methods({
             case "getRSVPs":
                 return AsyncMeetup.getRSVPs(param);
                 break
-
+            case "getLeaders" :
+                return AsyncMeetup.getProfiles(param);
+                break
             default:
 
         }
@@ -51,12 +53,10 @@ Meteor.methods({
         var meetups = Meetups.find().fetch();
         var count = Meetups.find().count();
         var x = 0;
-
-        console.log("Meetups to process: ", count);
-
+        
+        console.log( "Initiating Meetup Events Processing..");
         function f() {
             var meetup = meetups[x];
-            console.log("Processing meetup group (throttled): ", x, meetups[x].groupName);
 
             Meteor.call('MeetupAPI', 'getRSVPs', { "event_id": meetup.meetupId, "fields" : "host"}, function(err, response) {
                 if (!err) {
@@ -92,13 +92,7 @@ Meteor.methods({
                         } else {
                             attendeesCount++;
                         }
-                        if (node.host) {
-                            attendee.host = node.host;
-                            hosts.push(attendee);
-                        }
-                        else {
-                            attendee.host = false;
-                        }
+                        
                         if(addattendeeToMeetup) {
                             //console.log("Adding attendee - ", attendee.memberName);
                             attendees.push(attendee);
@@ -106,19 +100,42 @@ Meteor.methods({
                     }
                     //console.log("Updating attendees for: ", meetup.groupName);
                     
-                    Meetups.update({
-                        _id: meetup._id
-                    }, {
-                        $set: {
-                            attendees: attendees,
-                            attendeesCount: attendeesCount,
-                            attendeesWithPhotosCount: attendees.length,
-                            totalGuestsCount: totalGuestsCount,
-                            hosts: hosts
+                    // Lets find the leadership team for this group
+                    
+                    Meteor.call("MeetupAPI" , "getLeaders" , {"group_urlname": meetup.groupName, "role":"leads"} , function (err , response) {
+                        if (!err) {
+                            var leaders = response.results;
+                            for ( i = 0 ; i < response.meta.count ; i++ ) {
+                                
+                                var hostId = leaders[i].member_id;
+                                //Only consider those leaders who have RSVPd.
+                                if ( _.findWhere( attendees , {'memberId' : hostId}) ) {
+                                    leader = {};
+                                    if(leaders[i].hasOwnProperty("photo") && leaders[i].photo.photo_link !== "") {
+                    					leader.thumbnailUrl = leaders[i].photo.photo_link;
+                    				} 
+                                    leader.memberId = leaders[i].member_id;
+                                    leader.memberName = leaders[i].name;
+                                    leader.profile_url = leaders[i].profile_url;
+                                    leader.role= leaders[i].role;
+                                    leader.host = true;
+                                    hosts.push(leader);
+                                }
+                            }
+                            Meetups.update({
+                                _id: meetup._id
+                            }, {
+                                $set: {
+                                    attendees: attendees,
+                                    attendeesCount: attendeesCount,
+                                    attendeesWithPhotosCount: attendees.length,
+                                    totalGuestsCount: totalGuestsCount,
+                                    hosts: hosts
+                                }
+                            });
+                            
                         }
                     });
-                    
-
                 }
                 else {
                     //console.log("Error running getRSVPs meetup api: ", err.code, err.details);
@@ -129,6 +146,8 @@ Meteor.methods({
             x++;
             if (x < count) {
                 Meteor.setTimeout(f, 3000);
+            } else {
+                console.log(" Finished processing Meetup Events");
             }
         }
         f();
@@ -149,7 +168,7 @@ Meteor.publish("meetups", function() {
     return Meetups.find({}, {
         fields: {
             attendees: {
-                $slice: 5
+                $slice: 4
             }
         }
     });
