@@ -95,6 +95,10 @@ var seedDataJson = [
                 "city": "Norfolk, VA"
             },
             {
+                "url": "http://www.meetup.com/Meteor-Ottawa/events/217269002/",
+                "city": "Ottawa, ON"
+            },
+            {
                 "url": "http://www.meetup.com/Meteor-Portland/events/215188132/",
                 "city": "Portland, OR"
             },
