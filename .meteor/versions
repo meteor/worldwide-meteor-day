@@ -5,6 +5,8 @@ binary-heap@1.0.1
 blaze-tools@1.0.1
 blaze@2.0.3
 boilerplate-generator@1.0.1
+browser-policy-common@1.0.1
+browser-policy-framing@1.0.2
 callback-hook@1.0.1
 check@1.0.2
 ctl-helper@1.0.4
