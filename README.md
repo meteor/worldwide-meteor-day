@@ -15,6 +15,20 @@ Show&Tell Talks:
 * How Meteor helped us work together to create a Droste-style animation. by Babak Badaei (Friendly developer guy at Hemaka)
 * Gitflow Branch Dashboard by Richard Brooks (QA Engineer at BitTorrent Inc.)
 
+
+### [New York](http://www.meetup.com/Meteor-NY/events/212304662/)
+Show&Tell Talks:
+* Meteor &hearts; Healthcare with [Clinical Meteor](http://clinical.meteor.com) by Abigail Watson
+* Natural-language html with [SemanticUI](http://semantic-ui.com/) by Jack Lukic
+* Better hotel services via in-room tablets with [PlusMore](http://plusmoretablets.com/) by Pat Scott
+* Hilarious and nostalgic Facebook with [SuperPast.com](https://superpast.com) by Brad Meyer
+* Track your health via your photos with [Enfluence.io](http://www.enfluence.io/) by Shawn Dimantha
+* Share the places you love with [placelist](http://placelist.meteor.com/) by Chad
+* Collect and organize student work with [threering.com](http://threering.com) by Jon James
+* [RocketBoard.meteor.com](http://rocketboard.meteor.com)
+
+
+
 ### [Your City, copy paste this template :)](link)
 Show&Tell Talks:
 * talks given
