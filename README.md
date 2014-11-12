@@ -24,10 +24,28 @@ Show&Tell Talks:
 Notes:
 About 20 to 25 people attended. We started at 7.30pm and intended to stay until 9.30pm. But the participants were so curious and exited, we kept showing, hacking, and discussing until 11pm! Big success! We are looking forward to meet again soon, planning for it already.
 
+### [New York](http://www.meetup.com/Meteor-NY/events/212304662/)
+Great meetup in NYC.  100+ attendees.  The live coding demo was well received and show & tell had a good mix of simple and polished apps.
+
+We did our 8pm video chat with MDG; a little late getting started and the video chat app's sound setup was kinda funky but still a good experience. A bit more networking and local Q&A after that.
+
+Most people had already tried meteor.  Very few windows users.  Large interest in hosting / scaling.
+
+Show&Tell Talks:
+* Meteor &hearts; Healthcare with [Clinical Meteor](http://clinical.meteor.com) by Abigail Watson
+* Natural-language html with [SemanticUI](http://semantic-ui.com/) by Jack Lukic
+* Better hotel services via in-room tablets with [PlusMore](http://plusmoretablets.com/) by Pat Scott
+* Hilarious and nostalgic Facebook with [SuperPast.com](https://superpast.com) by Brad Meyer
+* Track your health via your photos with [Enfluence.io](http://www.enfluence.io/) by Shawn Dimantha
+* Share the places you love with [placelist](http://placelist.meteor.com/) by Chad
+* Collect and organize student work with [threering.com](http://threering.com) by Jon James
+* [RocketBoard.meteor.com](http://rocketboard.meteor.com)
+
+
 ### [Your City, copy paste this template :)](link)
 Show&Tell Talks:
 * talks given
-* 
+*
 
 Notes:
 any notes on how it went :)
