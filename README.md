@@ -15,6 +15,12 @@ Show&Tell Talks:
 * How Meteor helped us work together to create a Droste-style animation. by Babak Badaei (Friendly developer guy at Hemaka)
 * Gitflow Branch Dashboard by Richard Brooks (QA Engineer at BitTorrent Inc.)
 
+### [Vienna](http://www.meetup.com/Meteor-Vienna/events/212511812/)
+Show&Tell Talks:
+* Introduction to Meteor (Dominik Guzei)
+* PRISMA - Global Color Swatches for multiple Photoshop documents built with Meteor (Code Adventure)
+* Controlling Samsung TV Video player in Hospitals with Meteor
+
 ### [Your City, copy paste this template :)](link)
 Show&Tell Talks:
 * talks given
