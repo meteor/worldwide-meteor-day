@@ -17,6 +17,12 @@ Show&Tell Talks:
 
 
 ### [New York](http://www.meetup.com/Meteor-NY/events/212304662/)
+Great meetup in NYC.  100+ attendees.  The live coding demo was well received and show & tell had a good mix of simple and polished apps. 
+
+We did our 8pm video chat with MDG; a little late getting started and the video chat app's sound setup was kinda funky but still a good experience. A bit more networking and local Q&A after that.
+
+Most people had already tried meteor.  Very few windows users.  Large interest in hosting / scaling.
+
 Show&Tell Talks:
 * Meteor &hearts; Healthcare with [Clinical Meteor](http://clinical.meteor.com) by Abigail Watson
 * Natural-language html with [SemanticUI](http://semantic-ui.com/) by Jack Lukic
