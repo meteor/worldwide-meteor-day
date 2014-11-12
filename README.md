@@ -15,6 +15,15 @@ Show&Tell Talks:
 * How Meteor helped us work together to create a Droste-style animation. by Babak Badaei (Friendly developer guy at Hemaka)
 * Gitflow Branch Dashboard by Richard Brooks (QA Engineer at BitTorrent Inc.)
 
+### [Athens, Greece](http://www.meetup.com/Meteor-Athens-Greece/events/215885122/)
+Introduction project: https://github.com/svub/best-meteor-resources - a little web app to collaboratively collect links to great Meteor resources and vote on them. We hacked it together in about 30 to 45 minutes.
+Show&Tell Talks:
+* [Umeedoo](http://umeedoo.net), a web platform to find, share and join activities ([Sven Buschbeck](http://svenbuschbeck.net))
+* [parcel.gr](http://parcel.gr), a courier service search engine ([George Voulgaris](https://www.linkedin.com/in/voulgaris), if you want to try it out use "meteor@meteor.com:meteor")
+
+Notes:
+About 20 to 25 people attended. We started at 7.30pm and intended to stay until 9.30pm. But the participants were so curious and exited, we kept showing, hacking, and discussing until 11pm! Big success! We are looking forward to meet again soon, planning for it already.
+
 ### [Your City, copy paste this template :)](link)
 Show&Tell Talks:
 * talks given
