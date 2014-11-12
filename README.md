@@ -18,7 +18,6 @@
 
 ### [Athens, Greece](http://www.meetup.com/Meteor-Athens-Greece/events/215885122/)
 Introduction project: https://github.com/svub/best-meteor-resources - a little web app to collaboratively collect links to great Meteor resources and vote on them. We hacked it together in about 30 to 45 minutes.
-
 Show&Tell Talks:
 * [Umeedoo](http://umeedoo.net), a web platform to find, share and join activities ([Sven Buschbeck](http://svenbuschbeck.net))
 * [parcel.gr](http://parcel.gr), a courier service search engine ([George Voulgaris](https://www.linkedin.com/in/voulgaris), if you want to try it out use "meteor@meteor.com:meteor")
@@ -39,7 +38,7 @@ Show&Tell Talks:
 * Better hotel services via in-room tablets with [PlusMore](http://plusmoretablets.com/) by Pat Scott
 * Hilarious and nostalgic Facebook with [SuperPast.com](https://superpast.com) by Brad Meyer
 * Track your health via your photos with [Enfluence.io](http://www.enfluence.io/) by Shawn Dimantha
-* Share the places you love with [placelist](http://placelist.meteor.com/) by Chad
+* Share the places you love with [placelist](http://placelist.meteor.com/) by Chaz
 * Collect and organize student work with [threering.com](http://threering.com) by Jon James
 * [RocketBoard.meteor.com](http://rocketboard.meteor.com)
 
@@ -58,11 +57,6 @@ Show&Tell Talks:
 * [Josh Owens](https://twitter.com/joshowens) lead the Charlotte side of the MDG (Meteor Development Group) Developer Q&A. [Emily Stark](https://twitter.com/estark37) was our designated MDG developer. She did a great job answering questions for Charlotte and Atlanta meetups.
 * Pizza, beer, and soda was enjoyed by the group. The Meteor tshirts and stickers were a huge win too!
 
-### [Vienna](http://www.meetup.com/Meteor-Vienna/events/212511812/)
-Show&Tell Talks:
-* Introduction to Meteor (Dominik Guzei)
-* PRISMA - Global Color Swatches for multiple Photoshop documents built with Meteor (Code Adventure)
-* Controlling Samsung TV Video player in Hospitals with Meteor
 
 
 ### [Your City, copy paste this template :)](link)
