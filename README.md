@@ -39,7 +39,7 @@ Show&Tell Talks:
 * Better hotel services via in-room tablets with [PlusMore](http://plusmoretablets.com/) by Pat Scott
 * Hilarious and nostalgic Facebook with [SuperPast.com](https://superpast.com) by Brad Meyer
 * Track your health via your photos with [Enfluence.io](http://www.enfluence.io/) by Shawn Dimantha
-* Share the places you love with [placelist](http://placelist.meteor.com/) by Chad
+* Share the places you love with [placelist](http://placelist.meteor.com/) by Chaz
 * Collect and organize student work with [threering.com](http://threering.com) by Jon James
 * [RocketBoard.meteor.com](http://rocketboard.meteor.com)
 
