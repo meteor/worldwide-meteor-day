@@ -64,6 +64,19 @@ Show&Tell Talks:
 * PRISMA - Global Color Swatches for multiple Photoshop documents built with Meteor (Code Adventure)
 * Controlling Samsung TV Video player in Hospitals with Meteor
 
+### [Moscow](http://www.meetup.com/Meteor-Moscow/events/212818302/)
+**Show&Tell Talks:**
+
+* Introduction to Meteor ([Denis Gorbachev](https://twitter.com/DenGorbachev))
+* Strelka Institute Library ([Valia Fetisov](http://valiafetisov.com/))
+* [Pintask](https://pintask.me/) - extensible task tracker ([Denis Gorbachev](https://twitter.com/DenGorbachev))
+
+**Notes:**
+
+* Attended by 40+ people.
+* Most stayed up to 11pm.
+* Lots of interest in Meteor, both from students and experienced developers :)
+
 
 ### [Your City, copy paste this template :)](link)
 **Show&Tell Talks:**
