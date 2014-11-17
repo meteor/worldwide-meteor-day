@@ -64,6 +64,18 @@ Show&Tell Talks:
 * PRISMA - Global Color Swatches for multiple Photoshop documents built with Meteor (Code Adventure)
 * Controlling Samsung TV Video player in Hospitals with Meteor
 
+### [Berlin](http://www.meetup.com/Meteor-Berlin/)
+**Show&Tell Talks:**
+
+* [Introduction to Meteor](http://slides.com/cwaring/meteor-day-berlin#/) by [Chris Waring](https://twitter.com/cwaring/)
+* Presentation of the book [Building Single-page Web Apps with Meteor](https://www.packtpub.com/web-development/building-single-page-web-apps-meteor) by [Fabian Vogelsteller](https://twitter.com/feindura)
+* Our Meteor product - [Innoscale AG](http://innoscale.de/) by Philipp Brock 
+* Our Meteor product - [Curendo UG](http://www.curendo.de/) by Adrian Hunter 
+* Our Meteor experience - [Coyno UG](http://coyno.com/en/) by [Levin Keller](https://twitter.com/zeBookie)
+* [Meteor Day Checkin](http://meteorday.meteor.com/) by [The Bakery](https://twitter.com/bakeryhq)
+* [Ableton live & Meteor](http://abletone.meteor.com/) by [Chris Waring](https://twitter.com/cwaring/)
+* [Flowkey](http://www.flowkey.com/en) by [Ahmed Hassan](https://twitter.com/y0siris)
+* [Meteor Spotting](http://spotting.meteor.com/) by [The Bakery](https://twitter.com/bakeryhq)
 
 ### [Your City, copy paste this template :)](link)
 **Show&Tell Talks:**
