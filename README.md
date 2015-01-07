@@ -69,13 +69,27 @@ Show&Tell Talks:
 
 * [Introduction to Meteor](http://slides.com/cwaring/meteor-day-berlin#/) by [Chris Waring](https://twitter.com/cwaring/)
 * Presentation of the book [Building Single-page Web Apps with Meteor](https://www.packtpub.com/web-development/building-single-page-web-apps-meteor) by [Fabian Vogelsteller](https://twitter.com/feindura)
-* Our Meteor product - [Innoscale AG](http://innoscale.de/) by Philipp Brock 
-* Our Meteor product - [Curendo UG](http://www.curendo.de/) by Adrian Hunter 
+* Our Meteor product - [Innoscale AG](http://innoscale.de/) by Philipp Brock
+* Our Meteor product - [Curendo UG](http://www.curendo.de/) by Adrian Hunter
 * Our Meteor experience - [Coyno UG](http://coyno.com/en/) by [Levin Keller](https://twitter.com/zeBookie)
 * [Meteor Day Checkin](http://meteorday.meteor.com/) by [The Bakery](https://twitter.com/bakeryhq)
 * [Ableton live & Meteor](http://abletone.meteor.com/) by [Chris Waring](https://twitter.com/cwaring/)
 * [Flowkey](http://www.flowkey.com/en) by [Ahmed Hassan](https://twitter.com/y0siris)
 * [Meteor Spotting](http://spotting.meteor.com/) by [The Bakery](https://twitter.com/bakeryhq)
+
+### [Moscow](http://www.meetup.com/Meteor-Moscow/events/212818302/)
+**Show&Tell Talks:**
+
+* Introduction to Meteor ([Denis Gorbachev](https://twitter.com/DenGorbachev))
+* Strelka Institute Library ([Valia Fetisov](http://valiafetisov.com/))
+* [Pintask](https://pintask.me/) - extensible task tracker ([Denis Gorbachev](https://twitter.com/DenGorbachev))
+
+**Notes:**
+
+* Attended by 40+ people.
+* Most stayed up to 11pm.
+* Lots of interest in Meteor, both from students and experienced developers :)
+
 
 ### [Your City, copy paste this template :)](link)
 **Show&Tell Talks:**
